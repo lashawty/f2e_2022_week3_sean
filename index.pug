@@ -1,0 +1,35 @@
+doctype html
+html(lang="zh-TW")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title F2E 2022 Week 3 by Sean
+    link(rel="stylesheet", href='./css/style.css')
+  body
+    h1 F2E 2022 Week 3 by Sean
+    main
+      .loading
+        - for (let i = 1; i <= 20; i++)
+        .star-field
+          .stars.stars-sm
+          .stars.stars-md
+          .stars.stars-lg
+        .rocket
+          img(src="./assets/img/rocket-unfire.png", alt="alt")
+        .rocket-firing
+          img(src="./assets/img/rocket-firing.png", alt="alt")
+      .bg
+        .bg-stars
+        .bg-stars2
+        .bg-stars3 
+        .bg-title
+
+
+script(defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+crossorigin="anonymous")
+script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js')
+script(defer src='https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js')
+script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Observer.min.js')
+script(defer src="./js/animate.js")
+script(defer src="./js/app.js")
