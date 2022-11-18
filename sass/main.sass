@@ -1,4 +1,84 @@
+@import ./font
+//mixin
+=posCenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
 .bg
   position: absolute
   top: 0
   left: 0
+main
+  overflow: hidden
+  height: 100vh
+.index
+  .welcome
+    opacity: 0
+    transform: translateY(10%)
+    .title
+      margin: 100px auto 0 auto
+      display: flex
+      align-items: center
+      gap: 50px
+      width: fit-content
+      color: $blue
+      -webkit-text-stroke: 2px $white
+      &::before
+        content: '*'
+        color: $white
+      &::after
+        content: '+'
+        color: $white 
+        font-size: 100px
+    .img-tica
+      margin: 50px auto 0 auto
+      position: relative
+      z-index: -1
+      max-width: 260px
+      width: 100%
+    .welcome-text
+      margin: -150px auto 0 auto
+      width: 90vw
+      text-align: center
+      padding: 10px
+      background: $light-gray
+      >p
+        padding: 50px 65px
+        background: $green
+        color: $white
+        &::after
+          content:'|'
+          display: inline-block
+          margin-left: 5px
+          animation: typing 1s ease infinite
+          @keyframes typing
+            0%
+              opacity: 0
+            100%
+              opacity: 1
+    .challenge-accepted
+      margin: 30px auto 0 auto
+      padding: 20px
+      position: relative
+      display: block
+      background: $blue
+      width: 200px
+      text-align: center
+      color: $white
+      cursor: pointer
+      opacity: 0
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        width: 100%
+        height: 100%
+        background: $dark-gray
+        transition: transform .6s
+      &:hover
+        &::before
+          transform: translate(10px,10px)

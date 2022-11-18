@@ -7,7 +7,7 @@
   --ship-wing-color: #4C3198;
   --ship-window-trim-color: #4C3198;
   --ship-booster-color: #C38382;
-  --star-color: white;
+  --star-color: #fff;
   
   --stars-sm-speed: 5s;
   --stars-md-speed: 2s;
@@ -31,6 +31,7 @@
   position: absolute;
   z-index: 99;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .bg-star{
@@ -56,6 +57,7 @@
   will-change: transform;
   transition: transform 0.4s ease;
   transform: translate(-50%, -50%);
+  
 }
 
 .star-field {
@@ -135,19 +137,19 @@
   }
 }
 
-@keyframes exhaust {
-  to { transform: scaleX(0.98) translateY(-1vmin); }
-}
+// @keyframes exhaust {
+//   to { transform: scaleX(0.98) translateY(-1vmin); }
+// }
 
-@keyframes speed-up-exhaust {
-  from { transform: scale(0.98, 1); }
-  to   { transform: scale(0.96, 1.5); }
-}
+// @keyframes speed-up-exhaust {
+//   from { transform: scale(0.98, 1); }
+//   to   { transform: scale(0.96, 1.5); }
+// }
 
-@keyframes speed-up-ship {
-  from { transform: translateY(-5%); }
-  to   { transform: translateY(-3%); }
-}
+// @keyframes speed-up-ship {
+//   from { transform: translateY(-5%); }
+//   to   { transform: translateY(-3%); }
+// }
 
 @keyframes rocket-firing {
   from { opacity: 1; }
@@ -160,6 +162,7 @@
   height: 100vh;
   background: var(--sky-color);
   overflow: hidden;
+  z-index: -1;
 }
 
 .bg-stars {
