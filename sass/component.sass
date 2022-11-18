@@ -13,6 +13,59 @@ nav
     background: $light-gray
     width: 100%
     height: 15px
+.nav-rocket
+  position: relative
+  display: flex
+  align-items: center
+  max-width: 100%
+  transform: translateX(-105%)
+  img
+    position: absolute
+    z-index: 2
+    top: 50%
+    right: -25px
+    transform: translateY(-50%)
+    max-width: 50px
+  &::before
+    content: ''
+    display: inline-block
+    position: relative
+    z-index: 1
+    width: 100%
+    height: 50px
+    background: rgba($blue,.9)
+.transitions
+  position: absolute
+  z-index: 100
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  pointer-events: none
+  >ul
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    >li
+      width: 120px
+      height: 120px
+      background: #000
+      color: #000
+      opacity: 0
+      // transition: opacity .4s
+      transition-delay: .5s
+      &:nth-child(2n)
+        transition-delay: .1s
+      &:nth-child(3n)
+        transition-delay: .2s
+      &:nth-child(4n)
+        transition-delay: .3s
+      &:nth-child(5n)
+        transition-delay: .4s
+.next-e
+  display: none
+  opacity: 0
 
 footer
   position: fixed

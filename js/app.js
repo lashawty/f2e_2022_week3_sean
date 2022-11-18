@@ -1,3 +1,4 @@
+//畫面載入
 const loading = function () {
   const tl = gsap.timeline();
   tl.to(".rocket", {
@@ -21,7 +22,6 @@ const loading = function () {
     duration: 5,
   },"<")
   .to(".welcome", {
-    yPercent:'-10',
     opacity:1,
     duration: 5,
   })
@@ -36,15 +36,73 @@ const loading = function () {
   })
 }
 
-const ajaxIntro = function () {
-  $.ajax({
-    type: "get",
-    url: "./intro.html",
-    data: "data",
-    dataType: "dataType",
-    success: function (response) {
-      
-    }
-  });
-}
+//畫面載入執行
 loading()
+
+//轉場
+const transition = function (hideElement,showElement) {
+  
+  gsap.to(".cube",
+    {
+    opacity:'1',
+    ease:'none',
+    duration: 1,
+    }
+  )
+  gsap.to(".cube",
+    {
+    opacity:'0',
+    ease:'none',
+    duration: 1,
+    delay: 2,
+    }
+  )
+  setTimeout(() => {
+    hideElement.hide()
+    gsap.to(hideElement[0],{opacity:0})
+    showElement.show()
+  }, 1500);
+  
+}
+
+//出現下個元素
+const showNext = function (hideElement,showElement,nextElement,rocket) {
+  transition(hideElement,showElement)
+  setTimeout(() => {
+    transitionNextElement(nextElement,rocket)
+  }, 1500);
+}
+
+//下一個元素動畫
+const transitionNextElement = (e,rocket) =>{
+  gsap.to(e,
+    {
+    opacity: 1,
+    delay: 2,
+    duration: 5,
+    }
+  ),
+  gsap.to('.nav-rocket',{
+    xPercent: rocket,
+    delay: 3,
+    duration: 3,
+  })
+}
+
+//點擊事件
+//btn 字串,被點擊的元素
+//hide 要隱藏的元素
+//show 要出現元素
+//rocket 火箭進度
+const clickEvent = (btn, hide, show, rocket) => {
+  Observer.create({
+    target: btn,
+    type: "pointer",
+    onClick: () => showNext(hide,show,show,rocket)
+  });
+  
+}
+
+
+clickEvent('.challenge-accepted',$('.welcome'),$('.test'),10)
+clickEvent('.test-btn',$('.test'),$('.welcome'),0)

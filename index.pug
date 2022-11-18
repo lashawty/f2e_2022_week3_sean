@@ -9,6 +9,8 @@ html(lang="zh-TW")
 
   body.index
     nav
+      .nav-rocket
+        img(src="./assets/img/rocket-process.png", alt="alt")
     h1 F2E 2022 Week 3 by Sean
     
     main
@@ -22,6 +24,11 @@ html(lang="zh-TW")
           img(src="./assets/img/rocket-unfire.png", alt="alt")
         .rocket-firing
           img(src="./assets/img/rocket-firing.png", alt="alt")
+      .transitions
+        - let n = 0;
+        ul 
+          while n < 129
+            li.cube= n++
       .bg
         .bg-stars.bg-star
         .bg-stars2.bg-star
@@ -34,14 +41,14 @@ html(lang="zh-TW")
           p.fz-50.welcome-content
         .challenge-accepted
           p.fz-36 接受挑戰
-
+      .test.fz-100.next-e 123
+        .test-btn.fz-100 test
 
     footer F2E 2022 Week 3 by Sean
 
 script(defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 crossorigin="anonymous")
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js')
-script(defer src='https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js')
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Observer.min.js')
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js')
 script(defer src="./js/animate.js")
