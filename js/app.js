@@ -89,7 +89,7 @@ const transitionNextElement = (e,rocket) =>{
   })
 }
 
-//點擊事件
+//上一頁、下一頁切換
 //btn 字串,被點擊的元素
 //hide 要隱藏的元素
 //show 要出現元素
@@ -103,6 +103,17 @@ const clickEvent = (btn, hide, show, rocket) => {
   
 }
 
+clickEvent.init = () => {
+  //接受挑戰，無上一步 .welcome
+  clickEvent('.challenge-accepted',$('.welcome'),$('.introduction'),10)
 
-clickEvent('.challenge-accepted',$('.welcome'),$('.test'),10)
-clickEvent('.test-btn',$('.test'),$('.welcome'),0)
+  //introduction
+  clickEvent('.intro-prev',$('.introduction'),$('.welcome'),0)
+  clickEvent('.intro-next',$('.introduction'),$('.product-owner'),20)
+
+  //product-owner
+  clickEvent('.po-prev',$('.product-owner'),$('.introduction'),10)
+  clickEvent('.po-next',$('.product-owner'),$('.drag-game'),30)
+} 
+
+clickEvent.init()

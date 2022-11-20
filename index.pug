@@ -14,6 +14,7 @@ html(lang="zh-TW")
     h1 F2E 2022 Week 3 by Sean
     
     main
+      //進場
       .loading
         - for (let i = 1; i <= 20; i++)
         .star-field
@@ -24,25 +25,105 @@ html(lang="zh-TW")
           img(src="./assets/img/rocket-unfire.png", alt="alt")
         .rocket-firing
           img(src="./assets/img/rocket-firing.png", alt="alt")
+      
+      //轉場
       .transitions
         - let n = 0;
         ul 
-          while n < 129
+          while n < 144
             li.cube= n++
+      
+      //星星背景
       .bg
         .bg-stars.bg-star
         .bg-stars2.bg-star
         .bg-stars3.bg-star
-      .welcome
+      
+      //第一個畫面
+      .welcome.mgt-100
         p.fz-100.title WELCOME
         .img-tica
           img(src="./assets/img/engineer-tica.png", alt="alt")
         .welcome-text
           p.fz-50.welcome-content
-        .challenge-accepted
+        .challenge-accepted.common-btn
           p.fz-36 接受挑戰
-      .test.fz-100.next-e 123
-        .test-btn.fz-100 test
+      
+      //intro
+      .introduction.next-e.mgt-100
+        p.intro-title.fz-50 角色介紹
+        .intro-content
+          .each-character
+            .character-img
+              img(src="./assets/img/PO_head_lookleft.png", alt="")
+            p.fz-36 產品負責人
+            p.fz-24 產品方向及願景，定義產品細節，優先級別，交付時間。
+          .each-character
+            .character-img
+              img(src="./assets/img/RD_head_lookleft.png", alt="")
+            p.fz-36 敏捷教練
+            p.fz-24 負責團隊 scrum 能合理運作，理解需求及安排產品技術製作時程，確保工程品質。
+          .each-character
+            .character-img
+              img(src="./assets/img/SM_head_lookleft.png", alt="")
+            p.fz-36 開發團隊
+            p.fz-24 負責開發與交付產品，可為跨領域團隊，由設計師、工程師等不同專業人士組成。
+        .intro-button
+          a.recommend-link.fz-24(href="https://medium.com/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81-scrum-%E7%9A%84%E8%A7%92%E8%89%B2%E5%88%86%E5%B7%A5-d1d05818a954").recommend-link 推薦閱讀連結
+          .btn-group
+            .intro-prev.common-btn <
+            .intro-next.common-btn 我瞭解了！
+
+      // PO game-intro
+      .product-owner.next-e.mgt-100
+        .po-wrap
+          .pig-img
+            img(src="./assets/img/pig.png", alt="alt")
+          .dialog.fz-24.common-dialog
+            .po-show.hide-dialog
+              p (點擊顯示對話)
+            p.po-content.show-dialog 
+        .btn-group
+          .po-prev.common-btn <
+          .po-next.common-btn 接受挑戰
+      
+      //拖拉遊戲
+      .drag-game.next-e.mgt-100
+        .jira-wrap
+          .pig-img
+            img(src="./assets/img/pig.png", alt="alt")
+          .jira-box
+            .jira-text.fz-24
+              p 請試著把需求放到產品待辦清單，並調整待辦的優先度順序。<br \>我們公司也推薦使用
+                span
+                  a(href="https://www.atlassian.com/zh/software/jira") Jira
+                span 來做任務的管理呢！
+            .jira-logo
+              img(src="./assets/img/jira-logo.png", alt="")
+        .drag-wrap
+          .candidate.container
+            p.fz-36.drag-title 產品待辦清單 Product Backlog
+            .draggable(draggable="false" data-id="1")
+              p.fz-24 前台職缺列表
+              p 職缺詳細內容、點選可發送應徵意願
+            .draggable(draggable="false" data-id="2")
+              p.fz-24 應徵者的線上履歷編輯器
+            .draggable(draggable="false" data-id="3")
+              p.fz-24 會員系統
+              p 登入、註冊、權限管理
+            .draggable(draggable="false" data-id="4")
+              p.fz-24 後台職缺管理功能
+              p 資訊上架、下架、顯示應徵者資料
+          .priority
+            p 優先度高
+            p 優先度低
+          .container
+            .productBacklog
+        .message
+
+
+
+
 
     footer F2E 2022 Week 3 by Sean
 
@@ -51,5 +132,7 @@ crossorigin="anonymous")
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js')
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Observer.min.js')
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js')
+
+script(defer src='https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js')
 script(defer src="./js/animate.js")
 script(defer src="./js/app.js")

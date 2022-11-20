@@ -1,4 +1,5 @@
 @import ./font
+@import ./main
 nav
   position: fixed
   top: 0
@@ -66,7 +67,51 @@ nav
 .next-e
   display: none
   opacity: 0
-
+.mgt-100
+  margin: 100px auto 0 auto
+  width: 100%
+.btn-group
+  display: flex
+  align-items: center
+  gap: 30px
+.common-btn
+  padding: 20px
+  position: relative
+  display: block
+  background: $blue
+  text-align: center
+  color: $white
+  cursor: pointer
+  &:hover
+    &::before
+      transform: translate(10px,10px)
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    width: 100%
+    height: 100%
+    background: $dark-gray
+    transition: transform .6s
+.common-dialog
+  &.active
+    .show-dialog
+      display: block   
+    .hide-dialog
+      display: none
+.hide-dialog
+  cursor: pointer
+  animation: pop 1s infinite
+  @keyframes pop
+    0%, 50%, 100%
+      transform: translateY(0px)
+    25%, 75%
+      transform: translateY(5px)
+.show-dialog
+  display: none
+  +typing
 footer
   position: fixed
   bottom: 0

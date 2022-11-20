@@ -13,6 +13,7 @@
     </nav>
     <h1>F2E 2022 Week 3 by Sean</h1>
     <main>
+      <!--進場-->
       <div class="loading">
         <div class="star-field">
           <div class="stars stars-sm"></div>
@@ -22,6 +23,7 @@
         <div class="rocket"><img src="./assets/img/rocket-unfire.png" alt="alt"></div>
         <div class="rocket-firing"><img src="./assets/img/rocket-firing.png" alt="alt"></div>
       </div>
+      <!--轉場-->
       <div class="transitions">
         <ul> 
           <li class="cube">0</li>
@@ -153,25 +155,122 @@
           <li class="cube">126</li>
           <li class="cube">127</li>
           <li class="cube">128</li>
+          <li class="cube">129</li>
+          <li class="cube">130</li>
+          <li class="cube">131</li>
+          <li class="cube">132</li>
+          <li class="cube">133</li>
+          <li class="cube">134</li>
+          <li class="cube">135</li>
+          <li class="cube">136</li>
+          <li class="cube">137</li>
+          <li class="cube">138</li>
+          <li class="cube">139</li>
+          <li class="cube">140</li>
+          <li class="cube">141</li>
+          <li class="cube">142</li>
+          <li class="cube">143</li>
         </ul>
       </div>
+      <!--星星背景-->
       <div class="bg">
         <div class="bg-stars bg-star"></div>
         <div class="bg-stars2 bg-star"></div>
         <div class="bg-stars3 bg-star"></div>
       </div>
-      <div class="welcome">
+      <!--第一個畫面-->
+      <div class="welcome mgt-100">
         <p class="fz-100 title">WELCOME</p>
         <div class="img-tica"><img src="./assets/img/engineer-tica.png" alt="alt"></div>
         <div class="welcome-text">
           <p class="fz-50 welcome-content"></p>
         </div>
-        <div class="challenge-accepted">
+        <div class="challenge-accepted common-btn">
           <p class="fz-36">接受挑戰</p>
         </div>
       </div>
-      <div class="test fz-100 next-e">123
-        <div class="test-btn fz-100">test</div>
+      <!--intro-->
+      <div class="introduction next-e mgt-100">
+        <p class="intro-title fz-50">角色介紹</p>
+        <div class="intro-content">
+          <div class="each-character">
+            <div class="character-img"><img src="./assets/img/PO_head_lookleft.png" alt=""></div>
+            <p class="fz-36">產品負責人</p>
+            <p class="fz-24">產品方向及願景，定義產品細節，優先級別，交付時間。</p>
+          </div>
+          <div class="each-character">
+            <div class="character-img"><img src="./assets/img/RD_head_lookleft.png" alt=""></div>
+            <p class="fz-36">敏捷教練</p>
+            <p class="fz-24">負責團隊 scrum 能合理運作，理解需求及安排產品技術製作時程，確保工程品質。</p>
+          </div>
+          <div class="each-character">
+            <div class="character-img"><img src="./assets/img/SM_head_lookleft.png" alt=""></div>
+            <p class="fz-36">開發團隊</p>
+            <p class="fz-24">負責開發與交付產品，可為跨領域團隊，由設計師、工程師等不同專業人士組成。</p>
+          </div>
+        </div>
+        <div class="intro-button"><a class="recommend-link fz-24 recommend-link" href="https://medium.com/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81-scrum-%E7%9A%84%E8%A7%92%E8%89%B2%E5%88%86%E5%B7%A5-d1d05818a954">推薦閱讀連結</a>
+          <div class="btn-group">
+            <div class="intro-prev common-btn"><</div>
+            <div class="intro-next common-btn">我瞭解了！</div>
+          </div>
+        </div>
+      </div>
+      <!-- PO game-intro-->
+      <div class="product-owner next-e mgt-100">
+        <div class="po-wrap">
+          <div class="pig-img"><img src="./assets/img/pig.png" alt="alt"></div>
+          <div class="dialog fz-24 common-dialog">
+            <div class="po-show hide-dialog">
+              <p>(點擊顯示對話)</p>
+            </div>
+            <p class="po-content show-dialog"> </p>
+          </div>
+        </div>
+        <div class="btn-group">
+          <div class="po-prev common-btn"><</div>
+          <div class="po-next common-btn">接受挑戰</div>
+        </div>
+      </div>
+      <!--拖拉遊戲-->
+      <div class="drag-game next-e mgt-100">
+        <div class="jira-wrap">
+          <div class="pig-img"><img src="./assets/img/pig.png" alt="alt"></div>
+          <div class="jira-box">
+            <div class="jira-text fz-24">
+              <p>請試著把需求放到產品待辦清單，並調整待辦的優先度順序。<br \>我們公司也推薦使用<span><a href="https://www.atlassian.com/zh/software/jira">Jira</a></span><span>來做任務的管理呢！</span></p>
+            </div>
+            <div class="jira-logo"><img src="./assets/img/jira-logo.png" alt=""></div>
+          </div>
+        </div>
+        <div class="drag-wrap">
+          <div class="candidate container">
+            <p class="fz-36 drag-title">產品待辦清單 Product Backlog</p>
+            <div class="draggable" draggable="false" data-id="1">
+              <p class="fz-24">前台職缺列表</p>
+              <p>職缺詳細內容、點選可發送應徵意願</p>
+            </div>
+            <div class="draggable" draggable="false" data-id="2">
+              <p class="fz-24">應徵者的線上履歷編輯器</p>
+            </div>
+            <div class="draggable" draggable="false" data-id="3">
+              <p class="fz-24">會員系統</p>
+              <p>登入、註冊、權限管理</p>
+            </div>
+            <div class="draggable" draggable="false" data-id="4">
+              <p class="fz-24">後台職缺管理功能</p>
+              <p>資訊上架、下架、顯示應徵者資料</p>
+            </div>
+          </div>
+          <div class="priority">
+            <p>優先度高</p>
+            <p>優先度低</p>
+          </div>
+          <div class="container">
+            <div class="productBacklog"></div>
+          </div>
+        </div>
+        <div class="message"></div>
       </div>
     </main>
     <footer>F2E 2022 Week 3 by Sean</footer>
@@ -181,5 +280,6 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Observer.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
 <script defer src="./js/animate.js"></script>
 <script defer src="./js/app.js"></script>
