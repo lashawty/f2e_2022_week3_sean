@@ -174,6 +174,28 @@ main
     max-width: 160px
   .jira-text
     color: $white
+    a
+      display: inline-block
+      margin: 0 5px
+      position: relative
+      transition: letter-spacing .4s
+      &:hover
+        letter-spacing: 1.5px
+      &::after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 100%
+        height: 1px
+        background: $white
+        animation: link 5s infinite
+        @keyframes link
+          0%, 50%, 100%
+            width: 0
+          25%, 75%
+            width: 100%
   .drag-wrap
     display: flex
     height: 600px
@@ -211,3 +233,80 @@ main
   .productBacklog
     width: 100%
     height: 100%
+  .sortable-ghost
+    border: dashed 5px $light-gray
+  .message
+    display: none
+    &.active
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 1
+      display: block
+      background: rgba(#000, .6)
+      width: 100vw
+      height: 100vh
+    .message-box
+      +posCenter
+    .pig-img
+      margin: 0 auto
+      max-width: 360px
+      max-height: 305px
+    .check-message
+      margin-top: 30px
+      text-align: center
+      color: $white
+    .game-prev, .game-next
+      display: none
+      width: 150px
+      &.active
+        margin: 30px auto 0 auto
+        display: block
+  .btn-group
+    margin-top: 30px
+    justify-content: flex-end
+.sprint-explain
+  max-width: 1300px
+  .each-role
+    display: flex
+    align-items: center
+    gap: 40px
+    color: $white
+    &:not(:first-child)
+      margin-top: 40px
+  .role-img
+    max-width: 180px
+    flex-shrink: 0
+    img
+      max-height: 200px
+    >p
+      margin-top: 15px
+      text-align: center
+  .text-box
+    cursor: pointer
+    p
+      min-width: 70px
+      min-height: 50px
+      padding: 10px 20px
+    &[bg="red"]
+      p
+        background: $red
+    &[bg="green"]
+      p
+        background: $light-green
+    &[bg="mustard"]
+      p
+        background: $mustard
+    .explain-text
+      display: none
+      &.active
+        display: block
+  .btn-group
+    margin-top: 30px
+    justify-content: flex-end
+  .more
+    padding: 10px
+    background: $dark-gray
+    width: fit-content
+    margin: 10px 0 0 auto
+    animation: pop 1s infinite

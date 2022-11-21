@@ -114,6 +114,14 @@ clickEvent.init = () => {
   //product-owner
   clickEvent('.po-prev',$('.product-owner'),$('.introduction'),10)
   clickEvent('.po-next',$('.product-owner'),$('.drag-game'),30)
+
+  //拖拉遊戲
+  clickEvent('.drag-prev',$('.drag-game'),$('.product-owner'),20)
+  clickEvent('.game-next',$('.drag-game'),$('.sprint-explain'),40)
+
+  //短衝規劃說明
+  clickEvent('.explain-prev',$('.sprint-explain'),$('.drag-game'),30)
+  clickEvent('.explain-next',$('.sprint-explain'),$('.test'),60)
 } 
 
 clickEvent.init()

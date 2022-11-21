@@ -39,15 +39,90 @@ var candidate = Sortable.create(candidateDOM, {
 var productBacklog = Sortable.create(productBacklogDOM, {
   group: "shart",
   onChange: () => {
-    const answerMessage = document.querySelector(".message");
-    let order = productBacklog.toArray();
-    const answerrr = isArrEqual(order, answerAry); // true
-    if (answerrr === true) {
-      answerMessage.innerHTML =
-        "<p class='messageCorrect'>" + "順序正確" + "</p>";
-    } else {
-      answerMessage.innerHTML =
-        "<p class='messageWorng'>" + "順序錯誤" + "</p>";
-    }
+    dragCheck()
   }
 });
+
+const dragCheck = () => {
+  $('.drag-next').on('click', function () {
+    $('.message').addClass('active')
+  })
+  const answerMessage = document.querySelector(".message");
+  let order = productBacklog.toArray();
+  const answerrr = isArrEqual(order, answerAry); // true
+  const checkMessage = document.querySelector('.check-message')
+  if (answerrr === true) {
+    checkMessage.innerHTML ="你做得非常好！<br \>你已經能掌握基礎產品代辦清單的優先度排序<br \>接下來再繼續挑戰吧！"
+    $('.game-next').addClass('active')
+    $('.game-prev').removeClass('active')
+    
+  } else {
+    checkMessage.innerHTML ="順序可以再調整看看唷！"
+    $('.game-prev').addClass('active')
+    $('.game-next').removeClass('active')
+  }
+}
+
+//重新挑戰
+function reChallenge() {
+  $('.game-prev').on('click', function () {
+    $('.message').removeClass('active')
+  })
+  $('.game-next').on('click', function () {
+    $('.message').removeClass('active')
+  })
+}
+
+reChallenge()
+
+//sprint explain
+const explain = () => {
+  gsap.to(".dot", {
+    text: '...',
+    duration: 1,
+    ease: "none",
+    repeat: -1,
+    repeatDelay: 2,
+  })
+
+  $('.dot').on('click', function () {
+    const self = $(this)
+    $(self).siblings().addClass('active')
+    $(self).hide()
+    const $explainText = document.querySelectorAll('.explain-text');
+    const eachText = [
+      {
+        name: $explainText[0],
+        text: '產品待辦清單好了之後，我們來召集 Scrum Master 和開發團隊共同召開短衝規劃會議（Sprint Planning）。短衝即是一個迭代，具有固定時間限制，我們會在這個會議中，決定要完成哪些工作事項來達到商業需求，列出短衝待辦清單（Sprint Backlog），並由開發團隊在接下來的產品開發週期裡執行。'
+      },
+      {
+      name: $explainText[1],
+      text: '嗨嗨(ﾟ∀ﾟ)你是新來的前端吧！我是這次的 Scrum Master 山豬，我的工作主要是促成開發團隊成員協作、引導團隊進行自省會議，提升團隊成員對 Scrum 瞭解。這位是黃黃，是我們開發團隊的成員唷～'
+      },
+      {
+        name: $explainText[2],
+        text: '嘿！新來的，你應該還不知道點數是什麼意思吧(ゝ∀･)我來跟你介紹一下吧～ Sprint Point 目的是為了衡量速度，是用大概花費的時間預估出的相對點數。'
+        },
+    ]
+
+    for (let i = 0; i < $explainText.length; i++) {
+      gsap.to($(self).siblings()[0], {
+      text: eachText[i].text,
+      duration: 5,
+      ease: "none",
+      })
+    }
+
+    
+
+  })
+}
+
+// gsap.utils.toArray(".explain-text").forEach((element) => {
+  
+
+// });
+
+
+
+explain()
