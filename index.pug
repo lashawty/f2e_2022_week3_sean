@@ -15,23 +15,23 @@ html(lang="zh-TW")
     
     main
       //進場
-      .loading
-        - for (let i = 1; i <= 20; i++)
-        .star-field
-          .stars.stars-sm
-          .stars.stars-md
-          .stars.stars-lg
-        .rocket
-          img(src="./assets/img/rocket-unfire.png", alt="alt")
-        .rocket-firing
-          img(src="./assets/img/rocket-firing.png", alt="alt")
+      //- .loading
+      //-   - for (let i = 1; i <= 20; i++)
+      //-   .star-field
+      //-     .stars.stars-sm
+      //-     .stars.stars-md
+      //-     .stars.stars-lg
+      //-   .rocket
+      //-     img(src="./assets/img/rocket-unfire.png", alt="alt")
+      //-   .rocket-firing
+      //-     img(src="./assets/img/rocket-firing.png", alt="alt")
       
-      //轉場
-      .transitions
-        - let n = 0;
-        ul 
-          while n < 144
-            li.cube= n++
+      //- //轉場
+      //- .transitions
+      //-   - let n = 0;
+      //-   ul 
+      //-     while n < 144
+      //-       li.cube= n++
       
       //星星背景
       .bg
@@ -39,15 +39,20 @@ html(lang="zh-TW")
         .bg-stars2.bg-star
         .bg-stars3.bg-star
       
-      //第一個畫面
-      .welcome.mgt-100
-        p.fz-100.title WELCOME
-        .img-tica
-          img(src="./assets/img/engineer-tica.png", alt="alt")
-        .welcome-text
-          p.fz-50.welcome-content
-        .challenge-accepted.common-btn
-          p.fz-36 接受挑戰
+      //滑鼠
+      .mouse
+        img.undrag(src="./assets/img/undrag.png", alt="alt")
+        img.dragged(src="./assets/img/dragged.png", alt="alt")
+      
+      //- //第一個畫面
+      //- .welcome.mgt-100
+      //-   p.fz-100.title WELCOME
+      //-   .img-tica
+      //-     img(src="./assets/img/engineer-tica.png", alt="alt")
+      //-   .welcome-text
+      //-     p.fz-50.welcome-content
+      //-   .challenge-accepted.common-btn
+      //-     p.fz-36 接受挑戰
       
       //intro
       .introduction.next-e.mgt-100
@@ -103,15 +108,15 @@ html(lang="zh-TW")
         .drag-wrap
           .candidate.container
             p.fz-36.drag-title 產品待辦清單 Product Backlog
-            .draggable(draggable="false" data-id="1")
+            .draggable.cotton-model(draggable="false" data-id="2")
               p.fz-24 前台職缺列表
               p 職缺詳細內容、點選可發送應徵意願
-            .draggable(draggable="false" data-id="2")
+            .draggable.cotton-model(draggable="false" data-id="3")
               p.fz-24 應徵者的線上履歷編輯器
-            .draggable(draggable="false" data-id="3")
+            .draggable.cotton-model(draggable="false" data-id="4")
               p.fz-24 會員系統
               p 登入、註冊、權限管理
-            .draggable(draggable="false" data-id="4")
+            .draggable.cotton-model(draggable="false" data-id="1")
               p.fz-24 後台職缺管理功能
               p 資訊上架、下架、顯示應徵者資料
           .priority
@@ -137,7 +142,6 @@ html(lang="zh-TW")
             img(src="./assets/img/pig.png", alt="alt")
             p 產品負責人
           .text-box(bg="red")
-            //產品待辦清單好了之後，我們來召集 Scrum Master 和開發團隊共同召開短衝規劃會議（Sprint Planning）。短衝即是一個迭代，具有固定時間限制，我們會在這個會議中，決定要完成哪些工作事項來達到商業需求，列出短衝待辦清單（Sprint Backlog），並由開發團隊在接下來的產品開發週期裡執行。
             p.dot.dot1
             p.explain-text.explain-text1
         .each-role.fz-24
@@ -145,26 +149,142 @@ html(lang="zh-TW")
             img(src="./assets/img/coach.png", alt="alt")
             p 敏捷教練
           .text-box(bg="green")
-            //嗨嗨(ﾟ∀ﾟ)你是新來的前端吧！我是這次的 Scrum Master 山豬，我的工作主要是促成開發團隊成員協作、引導團隊進行自省會議，提升團隊成員對 Scrum 瞭解。這位是黃黃，是我們開發團隊的成員唷～
             p.dot.dot2
             p.explain-text.explain-text2
-            //目前我們團隊一次 Sprint 週期是兩週的時間，依照我的觀察，目前團隊可以負擔的點數 (Sprint Point) 大約是 20 點左右。
         .each-role.fz-24
           .role-img
             img(src="./assets/img/developer.png", alt="alt")
             p 開發團隊
           .text-box(bg="mustard")
-            //嘿！新來的，你應該還不知道點數是什麼意思吧(ゝ∀･)我來跟你介紹一下吧～ Sprint Point 目的是為了衡量速度，是用大概花費的時間預估出的相對點數。
             p.dot.dot3
             p.explain-text.explain-text3
-            //我這邊已經把剛剛討論好的點數標上去囉～你來練習把任務排到短衝待辦清單吧！<br \><br \>對了，我們平常管理任務是使用 Jira     這套軟體，你有時間記得先去註冊和熟悉唷～
         .btn-group
           .explain-prev.common-btn <
           .explain-next.common-btn 沒問題，我來挑戰！
 
-      //
-      .test.fz-100.next-e 123
+      //短衝待辦清單
+      .sprint-list.mgt-100.next-e 
+        .container
+          .backlog-section
+            p.fz-36.list-title 產品待辦清單 Product Backlog
+            .droppable-container
+          .sprint-section
+            p.fz-36.list-title 開發 A 組的短衝待辦清單
+            .droppable-container
+            ul.current-point.fz-24 目前點數
+              span.total-score
+            .warning-text.hidden 
+              p.fz-36 點數已超出上限，請移除一些項目
+        .btn-group
+          .list-prev.common-btn <
+          .list-next.common-btn 準備好了！開始 Sprint
 
+      //短衝
+      .sprint.mgt-100.next-e.sprint-now
+        .sprint-top
+          .role-img
+            img(src="./assets/img/RD_head_lookleft.png", alt="alt")
+            p.fz-24 開發團隊
+          .text-box(bg="green").fz-24
+            p.dot.sprint-dot
+            p.sprint-text 
+        .sprint-bottom
+          .option
+            .option-box.option-box1.active
+              p.fz-24 每日站立會議
+              p Daily Scrum
+            .option-box.option-box2
+              p.fz-24 短衝檢視會議
+              p Sprint Review
+            .option-box.option-box3
+              p.fz-24 短衝自省會議
+              p Sprint Retrospective
+          p.option-text.fz-24
+            | 每天都要進行的會議，以 15 分鐘為限制<br \>昨天為團隊的短衝目標（Sprint Goal）做了那些進度<br \>今天我會如何準備來幫助團隊達到短衝目標<br \>過程中有遇到什麼問題、難題<br \>透過團隊分享，追蹤大家的工作狀況。
+            span
+        .btn-group
+          .sprint-prev.common-btn <
+          .sprint-next.common-btn 我瞭解了
+
+      //短衝流程測驗 
+      .sprint.sprint-drag.mgt-100.next-e
+        .sprint-top
+          .role-img
+            img(src="./assets/img/RD_head_lookleft.png", alt="alt")
+            p.fz-24 開發團隊
+          .text-box(bg="green").fz-24
+            p.dot.sprint-drag-dot
+            p.sprint-text.sprint-drag-text
+        .sprint-bottom.fz-24
+          .flow-chart1
+            .step 產品待辦清單
+            span
+            .step 短衝規劃
+            span
+            .step 短衝待辦清單
+            span
+          .flow-chart2
+            p 短衝
+            p Sprint
+            span
+            span
+          .flow-chart3
+        .selection-wrap
+          .selection.answer(draggable="false" data-id="1").cotton-model
+            p.fz-24 短衝檢視會議
+            p Sprint Review
+          .selection.answer(draggable="false" data-id="2").cotton-model
+            p.fz-24 短衝自省會議
+            p Sprint Retrospective
+          .selection.answer(draggable="false" data-id="3").cotton-model
+            p.fz-24 每日站立會議
+            p Daily Scrum
+        .check-selection
+          .wrap
+            .role-img
+              img(src="./assets/img/RD_head_lookleft.png", alt="alt")
+            .success
+              p.fz-36 你做得非常好！<br \>你已經了解短衝的流程，<br \>接下來再繼續挑戰吧！
+              .sd-next.common-btn 前往下個挑戰
+            .fail
+              p.fz-36 差一點！<br \>再思考一下流程，你可以的！
+              .try-again.common-btn 再試試看
+        .btn-group
+          .sd-prev.common-btn <
+          .sd-done.common-btn 完成了～
+      
+      //自省回顧
+      .reflect.sprint.mgt-100
+        .sprint-top
+          .role-img
+            img(src="./assets/img/RD_head_lookleft.png", alt="alt")
+            p.fz-24 開發團隊
+          .text-box(bg="green").fz-24
+            p.dot.reflect-dot
+            p.sprint-text.reflect-text
+        .sprint-bottom
+          .container
+            p.fz-36 做得好的地方
+            .box.wrong
+              span 
+              p.fz-24 這次我幫了很多人救火耶。
+            .box.correct 
+              span 
+              p.fz-24 大家在開發上都會互相 cover，讓任務準時在時間內完成。
+          .container
+            p.fz-36 有哪些可以做得更好？
+            .box.correct 
+              span 
+              p.fz-24 可以記錄這次的開發時間，讓預估團隊點數可以更精準。
+            .box.wrong
+              span 
+              p.fz-24 開發時間預估不準確，請後端下次改進，避免 delay 到我。
+        .answer
+          .role-img
+        .btn-group
+          .reflect-prev.common-btn <
+          .reflect-next.common-btn 我想我了解了！
+      .congrats.next-e.fz-100 congrats
     footer F2E 2022 Week 3 by Sean
 
 script(defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -174,5 +294,6 @@ script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Observer.mi
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js')
 
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js')
+script(defer src='https://cdn.jsdelivr.net/gh/cotton123236/cottonjs@latest/lib/cotton.min.js')
 script(defer src="./js/animate.js")
 script(defer src="./js/app.js")

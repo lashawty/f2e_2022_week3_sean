@@ -36,9 +36,6 @@ const loading = function () {
   })
 }
 
-//畫面載入執行
-loading()
-
 //轉場
 const transition = function (hideElement,showElement) {
   
@@ -64,7 +61,14 @@ const transition = function (hideElement,showElement) {
   }, 1500);
   
 }
-
+//滑鼠
+const mouse = () => {
+// or using DOM element
+  const cursor = document.querySelector('.mouse')
+  const cottonCursor = new Cotton(cursor, {
+    speed: 1,
+  })
+}
 //出現下個元素
 const showNext = function (hideElement,showElement,nextElement,rocket) {
   transition(hideElement,showElement)
@@ -121,7 +125,26 @@ clickEvent.init = () => {
 
   //短衝規劃說明
   clickEvent('.explain-prev',$('.sprint-explain'),$('.drag-game'),30)
-  clickEvent('.explain-next',$('.sprint-explain'),$('.test'),60)
+  clickEvent('.explain-next',$('.sprint-explain'),$('.sprint-list'),50)
+
+  //短衝待辦清單
+  clickEvent('.list-prev',$('.sprint-list'),$('.sprint-explain'),40)
+  clickEvent('.list-next',$('.sprint-list'),$('.sprint-now'),60)
+
+  //短衝
+  clickEvent('.sprint-prev',$('.sprint-now'),$('.sprint-list'),50)
+  clickEvent('.sprint-next',$('.sprint-now'),$('.sprint-drag'),70)
+
+  //短衝流程測驗 
+  clickEvent('.sd-prev',$('.sprint-drag'),$('.sprint-now'),60)
+  clickEvent('.sd-next',$('.sprint-drag'),$('.reflect'),80)
+
+  //自省回顧
+  clickEvent('.reflect-prev',$('.reflect'),$('.sprint-drag'),70)
+  clickEvent('.reflect-next',$('.reflect'),$('.congrats'),100)
 } 
 
-clickEvent.init()
+// clickEvent.init()
+mouse()
+//畫面載入執行
+// loading()

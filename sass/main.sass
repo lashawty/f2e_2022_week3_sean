@@ -16,7 +16,33 @@
         opacity: 0
       100%
         opacity: 1
-
+=aarow
+  display: block
+  position: relative
+  width: 2px
+  height: 40px
+  background: $yellow
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    background: $yellow
+    width: 2px
+    height: 20px
+    animation: arrow 10s infinite
+    @keyframes arrow
+      0%, 50%, 100%
+        height: 5px
+      25%, 75%
+        height: 20px
+  &::before
+    transform: rotate(-45deg)
+    transform-origin: bottom left
+  &::after
+    transform: rotate(45deg)
+    transform-origin: bottom right
+  
 .bg
   position: absolute
   top: 0
@@ -211,7 +237,7 @@ main
   .draggable
     padding: 20px 30px
     border: 5px solid $red
-    cursor: grab
+    // cursor: grab
     &:not(:first-child)
       margin-top: 20px
     >p
@@ -283,7 +309,7 @@ main
       margin-top: 15px
       text-align: center
   .text-box
-    cursor: pointer
+    // cursor: pointer
     p
       min-width: 70px
       min-height: 50px
@@ -310,3 +336,269 @@ main
     width: fit-content
     margin: 10px 0 0 auto
     animation: pop 1s infinite
+.sprint-list
+  margin: 200px auto 0 auto
+  max-width: 1300px
+  color: $light-gray
+  .container
+    display: flex
+    gap: 25px
+  .backlog-section, .sprint-section
+    padding: 15px
+    position: relative
+    background: $dark-gray
+    width: 50%
+    min-height: 500px
+  .list-title 
+    margin-bottom: 20px
+  .droppable-container
+    display: flex
+    flex-direction: column
+    gap: 25px
+    min-height: 570px
+  .draggble
+    padding: 15px 30px
+    border: 5px solid $yellow
+    max-width: 70%
+    font-size: 24px
+    &:nth-child(even)
+      margin-left: auto
+    >p
+      margin-top: 15px
+      font-size: 20px
+  .time-avatar
+    margin-top: 10px
+    display: flex
+    align-items: center
+    gap: 5px
+    font-size: 16px
+    >li
+      width: 10px
+      height: 10px
+      background: $yellow
+      &:first-child
+        margin-left: 10px
+  .warning-text 
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(#000, .4)
+    &.hidden
+      display: none
+    >p
+      +posCenter
+  .current-point
+    display: flex
+    align-items: center
+    gap: 5px
+    >li
+      width: 10px
+      height: 10px
+      background: $yellow
+      &:first-child
+        margin-left: 10px
+  .btn-group
+    margin-top: 30px
+    justify-content: flex-end
+.sprint
+  max-width: 1300px 
+  .sprint-top
+    display: flex
+    align-items: flex-start
+    gap: 30px
+    min-height: 261px
+  .sprint-text
+    display: none
+    &.active
+      display: block
+  .role-img
+    max-width: 180px
+    width: 100%
+    flex-shrink: 0
+    >p
+      margin-top: 10px
+      color: $white
+      text-align: center
+  .text-box
+    padding: 15px 30px
+    background: $mustard
+    color: $white
+  .sprint-bottom
+    margin-top: 40px
+  .option
+    padding: 15px
+    display: flex
+    justify-content: space-between
+    background: $navy
+  .option-box
+    padding: 10px 0
+    width: 400px
+    text-align: center
+    color: $white
+    transition: background .6s
+    &:hover, &.active
+      background: $yellow
+      color: $dark-gray
+    >p
+      &:last-child
+        margin-top: 10px
+  .option-text
+    padding: 15px
+    color:$white
+    >img
+      transform: translateY(6px)
+      display: inline-block
+      max-width: 136px
+    >span
+      +typing
+.sprint-drag
+  .sprint-top
+    min-height: 200px
+  .sprint-bottom
+    padding: 50px 65px
+    background: $navy
+    display: flex
+  .flow-chart1
+    position: relative
+    .step
+      padding: 10px
+      background: $yellow
+    span
+      margin: 0 auto 40px auto
+      +aarow
+      &:last-child
+        position: absolute
+        margin: 0
+        right: -20px
+        bottom: 5px
+        transform: rotate(270deg)
+  .flow-chart2
+    margin: 100px 0 0 60px
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 20px
+    border: 5px solid $yellow
+    border-radius: 15px
+    width: 360px
+    color: $white
+    >span
+      +aarow
+      position: absolute
+      &:nth-child(3)
+        top: 60px
+        left: -3px
+      &:nth-child(4)
+        top: 37%
+        right: -21px
+        transform: rotate(270deg)
+  .flow-chart3
+    margin: 200px 0 0 80px
+    padding: 20px
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    &::before
+      content: ''
+      +posCenter
+      width: 100%
+      height: 100%
+      border: 3px dashed $yellow
+    .answer
+      position: relative
+      z-index: 1
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      border: 3px dashed $light-gray
+      width: 300px
+      height: 150px
+      &:first-child
+        position: absolute
+        top: -200px
+        left: -85px
+        border: 5px solid $yellow
+        border-radius: 15px
+    >span
+      +aarow
+      position: absolute
+      bottom: 40%
+      left: 50%
+      transform: rotate(270deg)
+  .selection-wrap
+    margin-top: 50px
+    display: flex
+    gap: 30px
+  .selection
+    padding: 10px
+    text-align: center
+    border: 5px solid $yellow
+    color: $white
+    // cursor: grab
+  .check-selection
+    display: none
+    &.active
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+      width: 100vw
+      height: 100vh
+      background: rgba(#000 ,.6)
+    .wrap
+      +posCenter
+    .role-img
+      margin: 0 auto
+    .success, .fail
+      display: none
+      &.active
+        display: block
+        margin-top: 20px
+        text-align: center
+      >p
+        color: $white
+      .common-btn
+        margin: 30px auto 0 auto
+        width: 200px
+.reflect
+  .sprint-top
+    min-height: 205px
+  .sprint-bottom
+    display: flex
+    justify-content: space-between
+  .container
+    width: 640px
+    >p
+      text-align: center
+      color: $yellow
+  .box
+    padding: 10px 10px 10px 60px
+    position: relative
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    background: $navy
+    height: 150px
+    &:hover, &.active
+      >p
+        color: $yellow
+    span
+      +aarow
+      position: absolute
+      left: 30px
+      display: inline-block
+      transform: rotate(270deg)
+    >p
+      display: inline-block
+      color: $white
+      transition: color .4s
+
