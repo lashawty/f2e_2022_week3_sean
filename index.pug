@@ -15,23 +15,23 @@ html(lang="zh-TW")
     
     main
       //進場
-      //- .loading
-      //-   - for (let i = 1; i <= 20; i++)
-      //-   .star-field
-      //-     .stars.stars-sm
-      //-     .stars.stars-md
-      //-     .stars.stars-lg
-      //-   .rocket
-      //-     img(src="./assets/img/rocket-unfire.png", alt="alt")
-      //-   .rocket-firing
-      //-     img(src="./assets/img/rocket-firing.png", alt="alt")
+      .loading
+        - for (let i = 1; i <= 20; i++)
+        .star-field
+          .stars.stars-sm
+          .stars.stars-md
+          .stars.stars-lg
+        .rocket
+          img(src="./assets/img/rocket-unfire.png", alt="alt")
+        .rocket-firing
+          img(src="./assets/img/rocket-firing.png", alt="alt")
       
-      //- //轉場
-      //- .transitions
-      //-   - let n = 0;
-      //-   ul 
-      //-     while n < 144
-      //-       li.cube= n++
+      //轉場
+      .transitions
+        - let n = 0;
+        ul 
+          while n < 144
+            li.cube= n++
       
       //星星背景
       .bg
@@ -44,15 +44,15 @@ html(lang="zh-TW")
         img.undrag(src="./assets/img/undrag.png", alt="alt")
         img.dragged(src="./assets/img/dragged.png", alt="alt")
       
-      //- //第一個畫面
-      //- .welcome.mgt-100
-      //-   p.fz-100.title WELCOME
-      //-   .img-tica
-      //-     img(src="./assets/img/engineer-tica.png", alt="alt")
-      //-   .welcome-text
-      //-     p.fz-50.welcome-content
-      //-   .challenge-accepted.common-btn
-      //-     p.fz-36 接受挑戰
+      //第一個畫面
+      .welcome.mgt-100
+        p.fz-100.title WELCOME
+        .img-tica
+          img(src="./assets/img/engineer-tica.png", alt="alt")
+        .welcome-text
+          p.fz-50.welcome-content
+        .challenge-accepted.common-btn
+          p.fz-36 接受挑戰
       
       //intro
       .introduction.next-e.mgt-100
@@ -254,7 +254,7 @@ html(lang="zh-TW")
           .sd-done.common-btn 完成了～
       
       //自省回顧
-      .reflect.sprint.mgt-100
+      .reflect.sprint.mgt-100.next-e
         .sprint-top
           .role-img
             img(src="./assets/img/RD_head_lookleft.png", alt="alt")
@@ -262,29 +262,74 @@ html(lang="zh-TW")
           .text-box(bg="green").fz-24
             p.dot.reflect-dot
             p.sprint-text.reflect-text
-        .sprint-bottom
+        .sprint-bottom.reflect-quiz
           .container
             p.fz-36 做得好的地方
             .box.wrong
               span 
               p.fz-24 這次我幫了很多人救火耶。
-            .box.correct 
+            .box.correct
               span 
               p.fz-24 大家在開發上都會互相 cover，讓任務準時在時間內完成。
           .container
             p.fz-36 有哪些可以做得更好？
-            .box.correct 
+            .box.correct
               span 
               p.fz-24 可以記錄這次的開發時間，讓預估團隊點數可以更精準。
             .box.wrong
               span 
               p.fz-24 開發時間預估不準確，請後端下次改進，避免 delay 到我。
         .answer
-          .role-img
+          .right-answer.answer-view
+            .answer-wrap
+              .role-img
+                img(src="./assets/img/developer.png", alt="alt")
+              p.fz-36 你做得非常好！<br \><br \>你已經了解如何給予『正面表述』的回饋！
+              .reflect-next.common-btn 完成挑戰
+          .wrong-answer.answer-view
+            .answer-wrap
+              .role-img
+                img(src="./assets/img/developer.png", alt="alt")
+              p.fz-36 差一點！<br \><br \>請你再思考看看，哪一些是符合『正面表述』的回饋？
+              .reflect-again.common-btn 再試試看
         .btn-group
           .reflect-prev.common-btn <
-          .reflect-next.common-btn 我想我了解了！
-      .congrats.next-e.fz-100 congrats
+          .reflect-check.common-btn 我想我了解了！
+      
+      .congrats.mgt-100.next-e
+        .firework-wrap
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+          .firework 
+        p.title CONGRATS
+        p.fz-50.text 恭喜通過 Scrum 新手村！<br \>正式加入 TT 資訊 開發 A 組！
+        .img-block
+          .role-img
+            img(src="./assets/img/pig.png", alt="alt")
+          .role-img
+            img(src="./assets/img/engineer-tica.png", alt="alt")
+          .role-img
+            img(src="./assets/img/developer.png", alt="alt")
+          .role-img
+            img(src="./assets/img/coach.png", alt="alt")
+        a(href="./index.html").common-btn 重新挑戰
     footer F2E 2022 Week 3 by Sean
 
 script(defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="

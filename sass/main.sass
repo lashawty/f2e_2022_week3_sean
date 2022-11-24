@@ -42,7 +42,6 @@
   &::after
     transform: rotate(45deg)
     transform-origin: bottom right
-  
 .bg
   position: absolute
   top: 0
@@ -588,9 +587,18 @@ main
     align-items: center
     background: $navy
     height: 150px
+    transition: background .4s
     &:hover, &.active
+      background: $dark-gray
       >p
         color: $yellow
+      span
+        animation: selected 3s infinite
+        @keyframes selected
+          0%, 50%, 100%
+            transform: rotate(270deg) translateY(5px)
+          25%, 75%
+            transform: rotate(270deg) translateY(0px)
     span
       +aarow
       position: absolute
@@ -601,4 +609,59 @@ main
       display: inline-block
       color: $white
       transition: color .4s
-
+  .answer
+    .answer-view
+      display: none
+      &.active
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 2
+        width: 100vw
+        height: 100vh
+        background: rgba(#000, .6)
+  .answer-wrap
+    +posCenter
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-width: 500px
+    text-align: center
+    color: $white
+    .role-img
+      margin: 0 auto
+    >p
+      margin-top: 20px
+    .common-btn
+      width: 200px
+      margin: 50px auto 0 auto
+.congrats
+  max-width: 1300px
+  .title
+    margin: 200px auto 0 auto
+    font-size: 200px
+    width: fit-content
+    color: $blue
+    -webkit-text-stroke: 2px $white
+    letter-spacing: 2px
+  .text
+    margin: 50px auto 0 auto
+    text-align: center
+    color: $white
+  .img-block
+    margin-top: 20px
+    display: flex
+    justify-content: space-between
+  .role-img
+    max-width: 250px
+    animation: pop 1s ease-out infinite
+    &:nth-child(2),&:nth-child(3)
+      margin-top: 50px
+      animation: pop 1s .5s ease-out infinite
+  .common-btn
+    position: absolute
+    top: 100px
+    left: 50px
+    max-width: 120px

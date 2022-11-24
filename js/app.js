@@ -141,10 +141,10 @@ clickEvent.init = () => {
 
   //自省回顧
   clickEvent('.reflect-prev',$('.reflect'),$('.sprint-drag'),70)
-  clickEvent('.reflect-next',$('.reflect'),$('.congrats'),100)
+  clickEvent('.reflect-next',$('.reflect'),$('.congrats'),105)
 } 
 
-// clickEvent.init()
+clickEvent.init()
 mouse()
 //畫面載入執行
-// loading()
+loading()

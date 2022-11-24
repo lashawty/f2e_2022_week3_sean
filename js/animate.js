@@ -26,6 +26,12 @@ function clickSwitchClass(target, className) {
   });
 }
 
+function clickToggleClass(target, className) {
+  $(target).on('click', function () {
+    $(this).toggleClass(className);
+  });
+}
+
 //PO intro
 const poIntro = () => {
   const poTexture = "我是 TT 資訊，開發 A 組的 PO，粉紅豬。<br \><br \>PO 也就是產品負責人（Product Owner）。<br \><br \>產品負責人會負責評估產品待辦清單的價值與重要性，依序排列要執行的優先順序，對齊產品目標。最後排出產品待辦清單（Product Backlog）唷！<br \><br \>剛好我最近手邊有一個『人才招募系統』的案子，我才剛列出了『產品需求清單』。 既然你都來了，來試試看調整產品優先度，排出產品待辦清單吧！"
@@ -354,8 +360,52 @@ const reflect = () => {
 
   dot()
   showTyping('.reflect-dot', $('.reflect-text'), '.reflect-text', text)
+
+  
+  //點擊切換active
+  clickToggleClass('.box', 'active')
+  const $box = $('.reflect .box')
+  const $correct = $('.reflect .correct')
+  const $wrong = $('.reflect .wrong')
+  
+
+  $('.reflect-check').on('click', function () {
+
+    let correctCheck = false
+    let doubleCheck = true
+
+    //如果錯誤答案被選擇了，就直接return
+    if($wrong.hasClass('active')) { return }
+
+    
+    $correct.each(function(index,element){
+      if($(this).hasClass('active')){
+        correctCheck = true
+      } else {
+        correctCheck = false
+        doubleCheck = false
+      }
+    });
+
+    if (correctCheck && doubleCheck ) {
+      $('.right-answer').addClass('active')
+      $('.wrong-answer').removeClass('active')
+    } else {
+      $('.right-answer').removeClass('active')
+      $('.wrong-answer').addClass('active')
+    }
+  })
+  
+  $('.reflect-again').on('click', function () {
+    $('.answer-view').removeClass('active')
+  })
+
+  $('.reflect-next').on('click', function () {
+    $('.answer-view').removeClass('active')
+  })
+
 }
-reflect()
+
 const initAll = () => {
   dragGame()
   poIntro()
@@ -363,6 +413,7 @@ const initAll = () => {
   sprintList()
   sprint.all()
   sprintDrag()
+  reflect()
 }
 
-// initAll()
+initAll()
