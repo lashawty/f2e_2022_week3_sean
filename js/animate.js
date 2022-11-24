@@ -375,7 +375,7 @@ const reflect = () => {
     let doubleCheck = true
 
     //如果錯誤答案被選擇了，就直接return
-    if($wrong.hasClass('active')) { return }
+    if($wrong.hasClass('active')) { doubleCheck = false}
 
     
     $correct.each(function(index,element){
