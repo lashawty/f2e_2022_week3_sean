@@ -18,27 +18,27 @@ const showTyping = (click, active, content, texture) => {
   } 
 }
 // 點擊切換active
-// clickSwitchClass(點擊目標,加上cls名稱)
+
 function clickSwitchClass(target, className) {
   $(target).on('click', function () {
     $(target).not(this).removeClass(className);
     $(this).addClass(className);
   });
 }
-
+// 點擊加上active，再次點擊則移除
 function clickToggleClass(target, className) {
   $(target).on('click', function () {
     $(this).toggleClass(className);
   });
 }
 
-//PO intro
+//產品待辦清單說明(點擊對話框)
 const poIntro = () => {
   const poTexture = "我是 TT 資訊，開發 A 組的 PO，粉紅豬。<br \><br \>PO 也就是產品負責人（Product Owner）。<br \><br \>產品負責人會負責評估產品待辦清單的價值與重要性，依序排列要執行的優先順序，對齊產品目標。最後排出產品待辦清單（Product Backlog）唷！<br \><br \>剛好我最近手邊有一個『人才招募系統』的案子，我才剛列出了『產品需求清單』。 既然你都來了，來試試看調整產品優先度，排出產品待辦清單吧！"
   showTyping('.po-show', $('.product-owner .dialog'),".po-content",poTexture)
 }
 
-
+//產品待辦清單
 //sortable js
 const dragGame = () => {
   const candidateDOM = document.querySelector(".candidate");
@@ -95,7 +95,7 @@ function reChallenge() {
 reChallenge()
 }
 
-//sprint explain
+//短衝規劃
 const dot = () => {
   gsap.to(".dot", {
     text: '...',
@@ -113,7 +113,7 @@ const dot = () => {
 const sprintExplain = {
   text1: '產品待辦清單好了之後，我們來召集 Scrum Master 和開發團隊共同召開短衝規劃會議（Sprint Planning）。短衝即是一個迭代，具有固定時間限制，我們會在這個會議中，決定要完成哪些工作事項來達到商業需求，列出短衝待辦清單（Sprint Backlog），並由開發團隊在接下來的產品開發週期裡執行。',
   text2: '嗨嗨(ﾟ∀ﾟ)你是新來的前端吧！我是這次的 Scrum Master 山豬，我的工作主要是促成開發團隊成員協作、引導團隊進行自省會議，提升團隊成員對 Scrum 瞭解。這位是黃黃，是我們開發團隊的成員唷～<br \><br \>目前我們團隊一次 Sprint 週期是兩週的時間，依照我的觀察，目前團隊可以負擔的點數 (Sprint Point) 大約是 20 點左右。',
-  text3: '嘿！新來的，你應該還不知道點數是什麼意思吧(ゝ∀･)我來跟你介紹一下吧～ Sprint Point 目的是為了衡量速度，是用大概花費的時間預估出的相對點數。<br \><br \>我這邊已經把剛剛討論好的點數標上去囉～你來練習把任務排到短衝待辦清單吧！<br \>對了，我們平常管理任務是使用 Jira     這套軟體，你有時間記得先去註冊和熟悉唷～'
+  text3: '嘿！新來的，你應該還不知道點數是什麼意思吧(ゝ∀･)我來跟你介紹一下吧～ Sprint Point 目的是為了衡量速度，是用大概花費的時間預估出的相對點數。<br \><br \>我這邊已經把剛剛討論好的點數標上去囉～你來練習把任務排到短衝待辦清單吧！<br \>對了，我們平常管理任務是使用<img src="./assets/img/jira-logo.png" alt="alt">這套軟體，你有時間記得先去註冊和熟悉唷～'
 }
 sprintExplain.init = () => {
   dot(),
@@ -122,7 +122,7 @@ sprintExplain.init = () => {
   showTyping('.dot3', $('.explain-text3'),".explain-text3",sprintExplain.text3)
 }
 
-//sprint-list
+//短衝待辦清單 
 const sprintList = () => {
   const backlogDOM = document.querySelector(
     ".backlog-section .droppable-container"
@@ -266,7 +266,7 @@ const sprintList = () => {
   });
 }
 
-//sprint
+//短衝規則(點擊顯示不同對話)
 const sprint = (target,text) => {
   clickSwitchClass('.option-box', 'active')
 
@@ -289,6 +289,7 @@ const sprint = (target,text) => {
   });
 }
 
+//短衝規則 執行、文字內容宣告
 sprint.all = () => {
   const text1 = '每天都要進行的會議，以 15 分鐘為限制<br \>昨天為團隊的短衝目標（Sprint Goal）做了那些進度<br \>今天我會如何準備來幫助團隊達到短衝目標<br \>過程中有遇到什麼問題、難題<br \>透過團隊分享，追蹤大家的工作狀況。 <span></span>'
   const text2 = '向利害關係人（Stakeholder）展示工作結果，蒐集使用回饋，分享市場反應，並一起討論下一步工作方向。<br \><br \>在短衝檢視會議過程，會取得使用者或利害關係人對於本次短衝增量的回饋數據或意見，討論哪些想法值得納入至產品待辦清單去實踐。 <span></span>'
@@ -301,7 +302,7 @@ sprint.all = () => {
   showTyping('.sprint-dot', $('.sprint-text'), '.sprint-text', text4)
 }
 
-//sprint-drag
+//短衝 拖曳流程
 const sprintDrag = () => {
   //上方文字
   const text = '那你來試試看，在這經典的 Scrum 流程圖中，這些流程分別代表哪一個會議呢？<br \><br \>請你試著把左下方三個方塊，"依序"拖拉至答案區中。'
@@ -338,6 +339,8 @@ const sprintDrag = () => {
     const answerMessage = document.querySelector(".notice");
     let order = productBacklog.toArray();
     const answerrr = isArrEqual(order, answerAry);
+    //看順序可開啟下面log
+    // console.log(answerrr,order,answerAry);
     const checkMessage = document.querySelector('.check-selection')
     if (answerrr === true) {
       $('.success').addClass('active')
@@ -406,6 +409,7 @@ const reflect = () => {
 
 }
 
+//執行全部function
 const initAll = () => {
   dragGame()
   poIntro()

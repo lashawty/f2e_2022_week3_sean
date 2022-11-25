@@ -61,6 +61,7 @@ const transition = function (hideElement,showElement) {
   }, 1500);
   
 }
+
 //滑鼠
 const mouse = () => {
 // or using DOM element
@@ -109,42 +110,42 @@ const clickEvent = (btn, hide, show, rocket) => {
 
 clickEvent.init = () => {
   //接受挑戰，無上一步 .welcome
-  clickEvent('.challenge-accepted',$('.welcome'),$('.introduction'),10)
+  clickEvent('.challenge-accepted',$('.welcome'),$('.introduction'),11)
 
-  //introduction
+  //角色介紹  
   clickEvent('.intro-prev',$('.introduction'),$('.welcome'),0)
-  clickEvent('.intro-next',$('.introduction'),$('.product-owner'),20)
+  clickEvent('.intro-next',$('.introduction'),$('.product-owner'),22)
 
   //product-owner
-  clickEvent('.po-prev',$('.product-owner'),$('.introduction'),10)
-  clickEvent('.po-next',$('.product-owner'),$('.drag-game'),30)
+  clickEvent('.po-prev',$('.product-owner'),$('.introduction'),11)
+  clickEvent('.po-next',$('.product-owner'),$('.drag-game'),33)
 
   //拖拉遊戲
-  clickEvent('.drag-prev',$('.drag-game'),$('.product-owner'),20)
-  clickEvent('.game-next',$('.drag-game'),$('.sprint-explain'),40)
+  clickEvent('.drag-prev',$('.drag-game'),$('.product-owner'),22)
+  clickEvent('.game-next',$('.drag-game'),$('.sprint-explain'),44)
 
   //短衝規劃說明
-  clickEvent('.explain-prev',$('.sprint-explain'),$('.drag-game'),30)
-  clickEvent('.explain-next',$('.sprint-explain'),$('.sprint-list'),50)
+  clickEvent('.explain-prev',$('.sprint-explain'),$('.drag-game'),33)
+  clickEvent('.explain-next',$('.sprint-explain'),$('.sprint-list'),55)
 
   //短衝待辦清單
-  clickEvent('.list-prev',$('.sprint-list'),$('.sprint-explain'),40)
-  clickEvent('.list-next',$('.sprint-list'),$('.sprint-now'),60)
+  clickEvent('.list-prev',$('.sprint-list'),$('.sprint-explain'),44)
+  clickEvent('.list-next',$('.sprint-list'),$('.sprint-now'),66)
 
   //短衝
-  clickEvent('.sprint-prev',$('.sprint-now'),$('.sprint-list'),50)
-  clickEvent('.sprint-next',$('.sprint-now'),$('.sprint-drag'),70)
+  clickEvent('.sprint-prev',$('.sprint-now'),$('.sprint-list'),55)
+  clickEvent('.sprint-next',$('.sprint-now'),$('.sprint-drag'),77)
 
   //短衝流程測驗 
-  clickEvent('.sd-prev',$('.sprint-drag'),$('.sprint-now'),60)
-  clickEvent('.sd-next',$('.sprint-drag'),$('.reflect'),80)
+  clickEvent('.sd-prev',$('.sprint-drag'),$('.sprint-now'),66)
+  clickEvent('.sd-next',$('.sprint-drag'),$('.reflect'),88)
 
   //自省回顧
-  clickEvent('.reflect-prev',$('.reflect'),$('.sprint-drag'),70)
+  clickEvent('.reflect-prev',$('.reflect'),$('.sprint-drag'),77)
   clickEvent('.reflect-next',$('.reflect'),$('.congrats'),105)
 } 
 
+//執行
 clickEvent.init()
 mouse()
-//畫面載入執行
 loading()

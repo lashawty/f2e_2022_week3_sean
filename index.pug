@@ -44,7 +44,7 @@ html(lang="zh-TW")
         img.undrag(src="./assets/img/undrag.png", alt="alt")
         img.dragged(src="./assets/img/dragged.png", alt="alt")
       
-      //第一個畫面
+      //歡迎
       .welcome.mgt-100
         p.fz-100.title WELCOME
         .img-tica
@@ -54,7 +54,7 @@ html(lang="zh-TW")
         .challenge-accepted.common-btn
           p.fz-36 接受挑戰
       
-      //intro
+      //1.角色介紹                   
       .introduction.next-e.mgt-100
         p.intro-title.fz-50 角色介紹
         .intro-content
@@ -79,7 +79,7 @@ html(lang="zh-TW")
             .intro-prev.common-btn <
             .intro-next.common-btn 我瞭解了！
 
-      // PO game-intro
+      //2.PO game-intro
       .product-owner.next-e.mgt-100
         .po-wrap
           .pig-img
@@ -92,7 +92,7 @@ html(lang="zh-TW")
           .po-prev.common-btn <
           .po-next.common-btn 接受挑戰
       
-      //拖拉遊戲
+      //3.拖拉遊戲
       .drag-game.mgt-100.next-e
         .jira-wrap
           .pig-img
@@ -135,7 +135,7 @@ html(lang="zh-TW")
           .drag-prev.common-btn <
           .drag-next.common-btn 我完成了
 
-      //短衝規劃說明
+      //4.短衝規劃說明
       .sprint-explain.mgt-100.next-e
         .each-role.fz-24
           .role-img
@@ -162,8 +162,8 @@ html(lang="zh-TW")
           .explain-prev.common-btn <
           .explain-next.common-btn 沒問題，我來挑戰！
 
-      //短衝待辦清單
-      .sprint-list.mgt-100.next-e 
+      //5.短衝待辦清單
+      .sprint-list.next-e 
         .container
           .backlog-section
             p.fz-36.list-title 產品待辦清單 Product Backlog
@@ -179,7 +179,7 @@ html(lang="zh-TW")
           .list-prev.common-btn <
           .list-next.common-btn 準備好了！開始 Sprint
 
-      //短衝
+      //6.短衝
       .sprint.mgt-100.next-e.sprint-now
         .sprint-top
           .role-img
@@ -206,7 +206,7 @@ html(lang="zh-TW")
           .sprint-prev.common-btn <
           .sprint-next.common-btn 我瞭解了
 
-      //短衝流程測驗 
+      //7.短衝流程測驗 
       .sprint.sprint-drag.mgt-100.next-e
         .sprint-top
           .role-img
@@ -230,13 +230,13 @@ html(lang="zh-TW")
             span
           .flow-chart3
         .selection-wrap
-          .selection.answer(draggable="false" data-id="1").cotton-model
+          .selection.answer(draggable="false" data-id="2").cotton-model
             p.fz-24 短衝檢視會議
             p Sprint Review
-          .selection.answer(draggable="false" data-id="2").cotton-model
+          .selection.answer(draggable="false" data-id="3").cotton-model
             p.fz-24 短衝自省會議
             p Sprint Retrospective
-          .selection.answer(draggable="false" data-id="3").cotton-model
+          .selection.answer(draggable="false" data-id="1").cotton-model
             p.fz-24 每日站立會議
             p Daily Scrum
         .check-selection
@@ -253,7 +253,7 @@ html(lang="zh-TW")
           .sd-prev.common-btn <
           .sd-done.common-btn 完成了～
       
-      //自省回顧
+      //8.自省回顧
       .reflect.sprint.mgt-100.next-e
         .sprint-top
           .role-img
@@ -296,6 +296,7 @@ html(lang="zh-TW")
           .reflect-prev.common-btn <
           .reflect-check.common-btn 我想我了解了！
       
+      //9.恭喜
       .congrats.mgt-100.next-e
         .firework-wrap
           .firework 
@@ -330,6 +331,7 @@ html(lang="zh-TW")
           .role-img
             img(src="./assets/img/coach.png", alt="alt")
         a(href="./index.html").common-btn 重新挑戰
+    
     footer F2E 2022 Week 3 by Sean
 
 script(defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -337,7 +339,6 @@ crossorigin="anonymous")
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js')
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Observer.min.js')
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js')
-
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js')
 script(defer src='https://cdn.jsdelivr.net/gh/cotton123236/cottonjs@latest/lib/cotton.min.js')
 script(defer src="./js/animate.js")
