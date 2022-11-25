@@ -32,3 +32,8 @@
 3. 複選題
 4. 僅在同個頁面開發，點擊"<"並不會回到預設值(考量使用者也許只是回頭複習，並不是想重做)
 5. HAVE FUN !!
+
+# 正解
+# ![cover](./assets/img/answer1.jpg)
+# ![cover](./assets/img/answer2.jpg)
+# ![cover](./assets/img/answer3.jpg)
