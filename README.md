@@ -1,7 +1,7 @@
 # f2e_2022_week3_sean
 # ![cover](./assets/img/cover.jpg)
 
-[網站連結](https://lashawty.github.io/f2e_2022_week2_sean/)
+[網站連結](https://lashawty.github.io/f2e_2022_week3_sean/)
 
 # ** 請使用1920x1080解析度預覽**
 
